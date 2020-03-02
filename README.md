@@ -1,24 +1,21 @@
 # skills-assessment-task
 
 ## Setup the environment
----
-
 ### Use the following two commands to setup and activate a virtual environment in python
-`python3 -m venv venv //create a virtual environment
-source venv/bin/activate // activate the virtual environment`
+`python3 -m venv venv` //create a virtual environment
+`source venv/bin/activate` // activate the virtual environment
 
 ### Install the dependencies by running the following command once the environment is setup:
 `pip3 install -r requirements.txt`
 
 
 ## Executing the code
---- 
-All files reside in the **task** directory. Chnage current directory to the task directory in order to run flask servers:
+All files reside in the **task** directory. Chnage current directory to the task directory in order to run flask servers:\n
 `cd task `
 
-We setup and run two flask servers:
-**Server A:** server that pings server B to get manipulated Presidential Data
-**Server B:** server that hosts an app which ingests data from json file(in the data directory),  manipulates it as required and returns the response as a CSV file
+We setup and run two flask servers:\n
+**Server A:** server that pings server B to get manipulated Presidential Data\n
+**Server B:** server that hosts an app which ingests data from json file(in the data directory),  manipulates it as required and returns the response as a CSV file\n
 
 ### To run flask server A: 
 `python3 serverA.py`
