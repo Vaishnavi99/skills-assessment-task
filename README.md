@@ -10,7 +10,7 @@
 
 
 ## Executing the code
-All files reside in the **task** directory. Chnage current directory to the task directory in order to run flask servers:\n
+All files reside in the **task** directory. Chnage current directory to the task directory in order to run flask servers:<br/>
 `cd task `
 
 We setup and run two flask servers:\n
