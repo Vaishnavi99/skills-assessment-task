@@ -1,24 +1,21 @@
 from flask import Flask, Response
 import pandas as pd
-import re, datetime, requests
+import requests
 
 app = Flask('PresidentialDataServerA')
-def getAcronyms(txt):
-    words =  re.split(r'[-,\s]\s*', txt)
-    return "".join([word[0] for word in words])
 
-@app.route('/', methods=['GET'])
+@app.route('/')
 def home():
-    return '''<p>API for presidential data: http://127.0.0.1:5001/api/data/presidents</p>'''
+    return '''<p>Server A: Try pinging http://127.0.0.1:5000/api/fetch/presidentialdata to fetch all Presidential data.</p>'''
 
 @app.route('/api/fetch/presidentialdata', methods=['GET'])
 def presidentData():
     r = requests.get('http://127.0.0.1:5001/api/data/presidents')
     return Response(
-    r.text,
-    mimetype="text/csv",
-    headers={"Content-disposition":
-             "attachment; filename=presidentialdata.csv"})
+        r.text,
+        mimetype="text/csv",
+        headers={"Content-disposition":
+                 "attachment; filename=presidentialdata.csv"})
 
 @app.errorhandler(404)
 def page_not_found(e):
